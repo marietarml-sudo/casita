@@ -26,7 +26,7 @@
     <button onclick="copiar()">Copiar Contraseña</button>
     <div id="msg">¡Contraseña copiada al portapapeles!</div>
     
-    <img src="qr.png" alt="Código QR Wi-Fi">
+    <img src="Beige and Orange Minimalist Wi-Fi QR Code Document.png" alt="Código QR Wi-Fi">
   </div>
 
   <script>
