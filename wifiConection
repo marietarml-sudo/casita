@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wi-Fi Casa</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; text-align: center; background: #f0f2f5; padding: 20px; margin: 0; }
+    .card { background: white; padding: 25px; border-radius: 20px; max-width: 320px; margin: 20px auto; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    h1 { font-size: 22px; margin-bottom: 5px; color: #1c1e21; }
+    p { color: #65676b; font-size: 15px; margin-top: 5px; }
+    .pass-box { background: #f0f2f5; padding: 12px; border-radius: 10px; font-weight: bold; font-size: 18px; margin: 15px 0; color: #050505; word-break: break-all; }
+    button { background: #0084ff; color: white; border: none; padding: 14px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%; transition: background 0.2s; }
+    button:active { background: #006bce; }
+    #msg { color: #31a24c; font-size: 13px; display: none; margin-top: 8px; font-weight: bold; }
+    img { max-width: 100%; border-radius: 10px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>📶 Wi-Fi de Casa</h1>
+    <p>Red: <strong id="ssid">NOMBRE_DE_TU_RED</strong></p>
+    
+    <div class="pass-box" id="password">TU_CONTRASEÑA</div>
+    
+    <button onclick="copiar()">Copiar Contraseña</button>
+    <div id="msg">¡Contraseña copiada al portapapeles!</div>
+    
+    <img src="qr.png" alt="Código QR Wi-Fi">
+  </div>
+
+  <script>
+    function copiar() {
+      const pass = document.getElementById('password').innerText;
+      navigator.clipboard.writeText(pass).then(() => {
+        const msg = document.getElementById('msg');
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 2500);
+      });
+    }
+  </script>
+</body>
+</html>
